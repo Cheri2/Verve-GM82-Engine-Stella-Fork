@@ -1,7 +1,16 @@
-# Verve GM8.2 Engine
-A light but robust GM8.2 framework for developing IWBTG fangames.
-Currently mostly finished - feature complete, but an engine has a lot of opportunities to break.
-For engine instructions and documentation, look either in the sample rooms, at code comments, or in the documentation folder.
+# Verve GM8.2 Engine - Stella Fork
+Verve 8.2 engine but for gimmick and precision needle. More accurate physics in very niche techs, and more gimmicks built-in.
 
-## Download
-For the latest version, click the green code button and then Download ZIP. Or just [click here](https://github.com/iwVerve/Verve-GM8.2-Engine/archive/refs/heads/main.zip).
+# Todo
+- [ ] PTJ (Platform triple jump)
+- [ ] NANG Stars
+- [ ] Shoot Refreshers
+- [ ] Align and Vstring indicators (Redlines)
+- [ ] Extended Jump Refreshers
+- [ ] Port of old visual codes from Korean IWC
+- [ ] Pause cheese prevention
+- [ ] Making sure fpi does work as it should in yuuutu
+- [ ] Options for saving subpixels
+- [ ] Maker vines
+- [ ] Variety 100 gimmicks
+- [ ] Golden berries
