@@ -4,7 +4,7 @@ Verve 8.2 engine but for gimmick and precision needle. More accurate physics in 
 # Todo
 - [ ] PTJ (Platform triple jump)
 - [ ] NANG Stars
-- [ ] Shoot Refreshers
+- [x] Shoot Refreshers
 - [ ] Align and Vstring indicators (Redlines)
 - [ ] Extended Jump Refreshers
 - [ ] Port of old visual codes from Korean IWC
