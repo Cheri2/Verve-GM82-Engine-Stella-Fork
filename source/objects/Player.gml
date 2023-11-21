@@ -60,7 +60,8 @@ if h_input != 0 if vine_direction == 0 {
 }
 
 if _ice == noone {
-    hspeed = h_input * run_speed;
+// this is required for precise vine tech
+    if ((vine_direction==h_input)||h_input==0||vine_direction==0) hspeed = h_input * run_speed;
 }
 else {
     if h_input != 0 {
@@ -94,7 +95,7 @@ if global.grav * vspeed > _current_max_vspeed {
 }
 
 if on_floor {
-    if place_free(x, y + global.grav) && !place_meeting(x, y + 2 * global.grav, Platform) {
+    if place_free(x, y + global.grav) && !place_meeting(x, y + 2 * global.grav, GeneralPlatform) {
         on_floor = false;
     }
 }
@@ -381,6 +382,94 @@ else {
         image_speed = 0.5;
     }
 }
+#define Collision_PlatformExtended
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+
+    if (global.grav==-1) platformOffset=sprite_get_yoffset(mask_index)
+    else platformOffset=sprite_get_height(mask_index)-sprite_get_yoffset(mask_index)
+    checkOffset=0
+    if (global.grav==1) {
+        //platforms, normal gravity
+
+        //find top of the platform using a binary search
+        oy=y
+        search=16
+        repeat (5) {
+            if (instance_place(x,y,other.id)) y-=search
+            else y+=search
+            search/=2
+        }
+        if (instance_place(x,y,other.id)) y-=1
+        ytop=bbox_bottom+1
+        y=oy
+
+        //change snap type for CustomSnap platforms
+        var snap_var;
+        snap_var=other.snap_type;
+
+        //check platform snap type
+        if (check_plat_snap(1,snap_var)) {
+            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
+                y=ytop-platformOffset
+                if (!place_free(x,y)) {
+                    //crushed!
+                    if (other.vspeed<0) {
+                        if (!global.strong_platforms) move_outside_solid(270,20)
+                    } else y=oy
+                } else {
+                    //land on it
+                    vspeed=max(0,other.vspeed)
+                    player_land()
+
+                }
+            }
+            vsplatform=max(0,other.vspeed)
+            walljumpboost=0
+        }
+    } else {
+        //upside down platforms
+
+        //find bottom of the platform using a binary search
+        oy=y
+        search=-16
+        repeat (5) {
+            if (instance_place(x,y,other.id)) y-=search
+            else y+=search
+            search/=2
+        }
+        if (instance_place(x,y,other.id)) y+=1
+        ytop=bbox_top
+        y=oy
+
+        //change snap type for CustomSnap platforms
+        var snap_var;
+        if (other.object_index==CustomSnap) snap_var=other.snap_type
+        else snap_var=global.platform_snap_type
+
+        //check platform snap type
+        if (check_plat_snap(-1,snap_var)) {
+            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
+                y=ytop+platformOffset
+                if (!place_free(x,y)) {
+                    //crushed!
+                    if (other.vspeed>0) {
+                        if (!global.strong_platforms) move_outside_solid(270,20)
+                    } else y=oy
+                } else {
+                    //land on it
+                    vspeed=min(0,other.vspeed)
+                    player_land()
+
+                }
+            }
+            vsplatform=min(0,other.vspeed)
+            walljumpboost=0
+        }
+    }
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

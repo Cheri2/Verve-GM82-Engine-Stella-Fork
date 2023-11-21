@@ -110,3 +110,5 @@
 	|ternary
 	|get_formatted_time
 	|ease_value
++Player Extended
+	|check_plat_snap

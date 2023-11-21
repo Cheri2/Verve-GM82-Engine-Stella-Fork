@@ -17,7 +17,7 @@
 	|Block
 	|BlockMoving
 	|BlockMini
-	|Platform
+	|PlatformExtended
 	|SaveBlocker
 	|TileDisplay
 	|SolidTileDisplay
@@ -27,6 +27,9 @@
 		|SlopeBottomRight
 		|SlopeTopLeft
 		|SlopeBottomLeft
+	+Legacy
+		|Platform
+		|GeneralPlatform
 +Killers
 	|PlayerKiller
 	|SpikeUp

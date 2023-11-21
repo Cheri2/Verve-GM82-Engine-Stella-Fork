@@ -45,5 +45,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*desc
+    Verve 8.2 engine platform. Simple but less options.
+*/
 //field snap: bool
 //field bounce: bool
