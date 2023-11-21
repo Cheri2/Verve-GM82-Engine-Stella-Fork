@@ -62,6 +62,7 @@
 	|sprMiniSpikeDown
 	|sprMiniSpikeLeft
 	|sprKillerBlock
+	|sprKillerBlockLegacy
 	|sprCherry
 	+Cherry colors
 		|sprCherryOrange
@@ -101,7 +102,15 @@
 	|sprGravityUp
 	|sprGravityDown
 	|sprSign
+	|sprPlatformCherry
+	|sprBounceCherry
+	|sprShootRefresherL
+	|sprShootRefresherR
 	|sprWarp
+	+NANG
+		|sprStarGray
+		|sprStarYellow
+		|sprStarBlack
 +Triggers
 	|sprTriggerMask
 	|sprTrigger
@@ -113,8 +122,4 @@
 +Misc
 	|sprEmpty
 	|spr1x1
-|sprPlatformCherry
-|sprBounceCherry
-|sprShootRefresherR
-|sprShootRefresherL
 |spr1x2

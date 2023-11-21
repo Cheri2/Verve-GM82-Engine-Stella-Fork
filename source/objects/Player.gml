@@ -42,7 +42,7 @@ var _current_max_vspeed, _ice, _conveyor;
 
 _ice = instance_place(x, y + global.grav, IceBlock);
 
-vine_direction = place_meeting(x + 1, y, VineRight);
+vine_direction = place_meeting(x, y, VineRight);
 if vine_direction == 0 {
     vine_direction = -place_meeting(x - 1, y, VineLeft);
 }
@@ -104,7 +104,7 @@ if global.grav * vspeed > _current_max_vspeed {
 }
 
 if on_floor {
-    if place_free(x, y + global.grav) && !place_meeting(x, y + 2 * global.grav, GeneralPlatform) {
+    if (place_free(x, y + global.grav)) && !place_meeting(x, y + 2 * global.grav, GeneralPlatform) {
         on_floor = false;
     }
 }
@@ -229,9 +229,9 @@ applies_to=self
 var _dist, _dir;
 
 // Gravity will be added by the time the player moves, but it hasn't been yet.
-// We temporarily add it now to correct for this.
-vspeed += gravity;
+// We temporarily add it now to correct for this
 
+vspeed += gravity;
 if !place_free(x + hspeed, y + vspeed) {
     if !place_free(x + hspeed, y) {
         // Horizontal collision

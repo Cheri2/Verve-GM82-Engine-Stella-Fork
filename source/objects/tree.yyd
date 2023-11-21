@@ -6,8 +6,6 @@
 	|Options
 	|MusicPlayer
 	|Camera
-+Priority Gimmicks
-	|ShootRefresherR
 +Player
 	|PlayerStart
 	|Player
@@ -43,6 +41,7 @@
 	|MiniSpikeDown
 	|MiniSpikeLeft
 	|KillerBlock
+	|KillerBlockLegacy
 	|Cherry
 +Saves
 	|SaveMedium
@@ -68,10 +67,16 @@
 	+Extended Vines
 		|IceVineLeft
 		|IceVineRight
+	+Jump
+		|StarTripleJump
+		|StarSingleJump
+		|StarDoubleJump
 	+Misc
 		|PlatformCherry
 		|BounceCherry
 		|AutoBounce
+		|ShootRefresherR
+		|ShootRefresherL
 	|PlatformTouch
 	|VineLeft
 	|VineRight
