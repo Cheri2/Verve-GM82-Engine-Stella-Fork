@@ -92,8 +92,12 @@ if place_meeting(x, y, WaterCatharsis) {
         air_jumps = max_air_jumps;
     }
 }
+if place_meeting(x, y, AutoBounce) {
+    _current_max_vspeed = -8.5
+    air_jumps = max_air_jumps;
+}
 if place_meeting(x, y, WaterCry) {
-    vspeed -= global.grav * 1.5
+    vspeed -= global.grav * 0.6
 }
 if global.grav * vspeed > _current_max_vspeed {
     vspeed = global.grav * _current_max_vspeed;
@@ -520,5 +524,5 @@ draw_sprite_ext(_draw_sprite, image_index, _draw_x, _draw_y, x_scale, _draw_y_sc
 
 // Draw the bow
 if has_bow {
-    draw_sprite_ext(sprPlayerBow, image_index, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+    draw_sprite_ext(sprPlayerBow, clamp(air_jumps,0,5), _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
 }

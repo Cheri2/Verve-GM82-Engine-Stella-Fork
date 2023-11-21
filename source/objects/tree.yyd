@@ -54,6 +54,7 @@
 		|Water
 		|WaterRefreshing
 		|WaterGroundJump
+		|PlatformWater
 		|WaterCatharsis
 		|WaterCry
 	+Blocks
@@ -65,6 +66,10 @@
 	+Extended Vines
 		|IceVineLeft
 		|IceVineRight
+	+Misc
+		|PlatformCherry
+		|BounceCherry
+		|AutoBounce
 	|PlatformTouch
 	|VineLeft
 	|VineRight

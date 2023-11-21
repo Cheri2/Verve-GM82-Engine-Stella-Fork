@@ -114,3 +114,8 @@ sprPlatform9slice
 sprIceVineLeft
 sprIceVineRight
 sprWaterCry
+sprPlatformWater
+sprPlatformCherry
+sprAutoBounce
+
+sprBounceCherry

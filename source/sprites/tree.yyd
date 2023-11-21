@@ -43,6 +43,7 @@
 	|sprConveyorLeft
 	|sprConveyorRight
 	|sprPlatform
+	|sprAutoBounce
 	|sprSaveBlocker
 	+Slopes
 		|sprSlope
@@ -87,6 +88,7 @@
 	|sprSaveVeryHardFlip
 +Gimmicks
 	|sprWater
+	|sprPlatformWater
 	|sprWaterCry
 	|sprWaterRefreshing
 	|sprWaterGroundJump
@@ -111,3 +113,5 @@
 +Misc
 	|sprEmpty
 	|spr1x1
+|sprPlatformCherry
+|sprBounceCherry

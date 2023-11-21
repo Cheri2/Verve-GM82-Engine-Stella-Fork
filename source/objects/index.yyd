@@ -91,3 +91,7 @@ GeneralPlatform
 IceVineLeft
 IceVineRight
 WaterCry
+PlatformWater
+PlatformCherry
+AutoBounce
+BounceCherry
