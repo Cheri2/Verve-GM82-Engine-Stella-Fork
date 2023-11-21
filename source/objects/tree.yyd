@@ -61,6 +61,9 @@
 		|IceBlock
 		|ConveyorLeft
 		|ConveyorRight
+	+Extended Vines
+		|IceVineLeft
+		|IceVineRight
 	|PlatformTouch
 	|VineLeft
 	|VineRight

@@ -14,6 +14,7 @@ max_vspeed = 9;
 run_speed = 3;
 
 // State
+_icevine=false;
 frozen = false;
 gravity = grav * global.grav;
 air_jumps = max_air_jumps;
@@ -46,6 +47,7 @@ if vine_direction == 0 {
     vine_direction = -place_meeting(x - 1, y, VineLeft);
 }
 
+    _icevine = place_meeting(x + 1, y, IceVineRight)||place_meeting(x - 1, y, IceVineLeft)
 // Horizontal movement
 h_input = 0;
 if !frozen {
@@ -131,6 +133,7 @@ applies_to=self
 /// Vines
 
 if vine_direction != 0 {
+
     if vine_direction == 1 {
         x_scale = -1;
     }
@@ -138,7 +141,7 @@ if vine_direction != 0 {
         x_scale = 1;
     }
 
-    vspeed = 2 * global.grav;
+    if(!_icevine) vspeed = 2 * global.grav;
 
     if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
         if input_check(key_jump) {
