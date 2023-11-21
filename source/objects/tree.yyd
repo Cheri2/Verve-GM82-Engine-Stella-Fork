@@ -6,19 +6,21 @@
 	|Options
 	|MusicPlayer
 	|Camera
++Priority Gimmicks
+	|ShootRefresherR
 +Player
 	|PlayerStart
 	|Player
-	|Bullet
 	|BloodEmitter
 	|Blood
+	|Bullet
 	|GameOver
 +Blocks
+	|SaveBlocker
 	|Block
 	|BlockMoving
 	|BlockMini
 	|PlatformExtended
-	|SaveBlocker
 	|TileDisplay
 	|SolidTileDisplay
 	+Slopes

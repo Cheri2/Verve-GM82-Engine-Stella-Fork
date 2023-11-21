@@ -46,7 +46,7 @@ applies_to=self
 /*desc
     renex engine platforms. rotation and custom snaps.
     snap types:
-    0 - yuuutu - inconsistent snap, how it works in most engines
+    0 - yuuutu - inconsistent snap, how it works in most engines. For precision needle.
     1 - hard - always snap regardless of vertical movement, also snaps when near the top
     2 - light - snaps only when near the top
     3 - none - don't snap at all, act like one-way blocks
