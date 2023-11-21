@@ -92,6 +92,9 @@ if place_meeting(x, y, WaterCatharsis) {
         air_jumps = max_air_jumps;
     }
 }
+if place_meeting(x, y, WaterCry) {
+    vspeed -= global.grav * 1.5
+}
 if global.grav * vspeed > _current_max_vspeed {
     vspeed = global.grav * _current_max_vspeed;
 }

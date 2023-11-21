@@ -87,6 +87,7 @@
 	|sprSaveVeryHardFlip
 +Gimmicks
 	|sprWater
+	|sprWaterCry
 	|sprWaterRefreshing
 	|sprWaterGroundJump
 	|sprWaterCatharsis

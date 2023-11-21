@@ -55,6 +55,7 @@
 		|WaterRefreshing
 		|WaterGroundJump
 		|WaterCatharsis
+		|WaterCry
 	+Blocks
 		|BlockFake
 		|BlockInvisible
