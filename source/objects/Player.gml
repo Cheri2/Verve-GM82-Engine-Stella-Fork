@@ -423,7 +423,7 @@ applies_to=self
 
         //check platform snap type
         if (check_plat_snap(1,snap_var)) {
-            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
+            if (snap_var!=2 && (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
                 y=ytop-platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
@@ -461,7 +461,7 @@ applies_to=self
 
         //check platform snap type
         if (check_plat_snap(-1,snap_var)) {
-            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
+            if (snap_var!=2 && (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
                 y=ytop+platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
