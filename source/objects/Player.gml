@@ -172,6 +172,21 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/// 'Hard' Gimmicks
+
+// Push Blocks
+with (PushBlock) if (vspeed=0) if (instance_place(x-sign(other.hspeed)*2,y,other.id)) {
+    solid=0
+    if (place_free(x+sign(other.hspeed)*push_speed,y)) {
+        hspeed=sign(other.hspeed)*push_speed
+    }
+    solid=1
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 /// Slope collision
 var _landed, _sign, _was_on_slope, _is_going_into_slope, _store_y;
 

@@ -30,6 +30,7 @@
 	+Legacy
 		|Platform
 		|GeneralPlatform
+	|PushBlock
 +Killers
 	|PlayerKiller
 	|SpikeUp
