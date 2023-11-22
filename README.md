@@ -10,7 +10,7 @@ Verve 8.2 engine but for gimmick and precision needle. More accurate physics in 
 - [ ] Port of old visual codes from Korean IWC
 - [ ] Pause cheese prevention
 - [ ] Making sure fpi does work as it should in yuuutu
-- [ ] Options for saving subpixels
+- [x] Options for saving subpixels
 - [ ] Maker vines
 - [ ] Variety 100 gimmicks
 - [ ] Golden berries
