@@ -91,6 +91,7 @@
 	|sprWater
 	|sprPlatformWater
 	|sprWaterCry
+	|sprWaterReverse
 	|sprWaterRefreshing
 	|sprWaterGroundJump
 	|sprWaterCatharsis
@@ -123,3 +124,4 @@
 	|sprEmpty
 	|spr1x1
 |spr1x2
+|spr32x32

@@ -92,6 +92,10 @@ if place_meeting(x, y, WaterCatharsis) {
         air_jumps = max_air_jumps;
     }
 }
+if place_meeting(x, y, WaterReverse) {
+// account for gravity
+    _current_max_vspeed = -2 - 2 * grav;
+}
 if place_meeting(x, y, AutoBounce) {
     _current_max_vspeed = -8.5
     air_jumps = max_air_jumps;

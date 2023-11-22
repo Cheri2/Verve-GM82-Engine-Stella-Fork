@@ -59,6 +59,7 @@
 		|PlatformWater
 		|WaterCatharsis
 		|WaterCry
+		|WaterReverse
 	+Blocks
 		|BlockFake
 		|BlockInvisible
@@ -116,3 +117,5 @@
 		|objSampleBossWarp
 		|objSampleBossItem
 	|SampleStretchingBlock
++Visuals
+	|SurfaceBlock
