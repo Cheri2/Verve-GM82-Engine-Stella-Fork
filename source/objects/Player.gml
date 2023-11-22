@@ -42,7 +42,7 @@ var _current_max_vspeed, _ice, _conveyor;
 
 _ice = instance_place(x, y + global.grav, IceBlock);
 
-vine_direction = place_meeting(x, y, VineRight);
+vine_direction = place_meeting(x+1, y, VineRight);
 if vine_direction == 0 {
     vine_direction = -place_meeting(x - 1, y, VineLeft);
 }
@@ -457,8 +457,7 @@ applies_to=self
 
         //change snap type for CustomSnap platforms
         var snap_var;
-        if (other.object_index==CustomSnap) snap_var=other.snap_type
-        else snap_var=global.platform_snap_type
+        snap_var=other.snap_type
 
         //check platform snap type
         if (check_plat_snap(-1,snap_var)) {

@@ -1,3 +1,3 @@
 //gm82 fields begin
-text="Hi!"
+text="I'm a sign!"
 //gm82 fields end
