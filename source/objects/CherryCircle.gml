@@ -56,7 +56,7 @@ for (i=0;i<num_cherries;i+=1) {
         }break
         case "trefoil": {
             r=radius*(4+cos(time*3*pi/2))/4
-            a=ct
+            a=ct*360
         }break
     }
 
