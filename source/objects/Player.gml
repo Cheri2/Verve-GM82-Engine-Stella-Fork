@@ -124,16 +124,16 @@ applies_to=self
 /// Actions
 if(global.biogom_jump) {
 if !frozen {
-    if(input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_jc_jump)) {
+    if(input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump2)||input_check_pressed(key_extra_jump3)||input_check_pressed(key_extra_jump4)||input_check_pressed(key_extra_jump5)||input_check_pressed(key_extra_jump6)||input_check_pressed(key_jc_jump)) {
     shift_pressed=1
 }
-if(input_check_released(key_jump)||input_check_released(key_extra_jump) || input_check_released(key_jc_jump)) {
+if(input_check_released(key_jump)||input_check_released(key_extra_jump)||input_check_released(key_extra_jump2)||input_check_released(key_extra_jump3)||input_check_released(key_extra_jump4)||input_check_released(key_extra_jump5)||input_check_released(key_extra_jump6) || input_check_released(key_jc_jump)) {
     shift_pressed=0
 }
-    if input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_jc_jump) {
+    if input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump2)||input_check_pressed(key_extra_jump3)||input_check_pressed(key_extra_jump4)||input_check_pressed(key_extra_jump5)||input_check_pressed(key_extra_jump6)||input_check_pressed(key_jc_jump) {
         player_try_jump();
     }
-    if input_check_released(key_jump)||input_check_released(key_extra_jump)||input_check_pressed(key_jc_jump) {
+    if input_check_released(key_jump)||input_check_released(key_extra_jump)||input_check_released(key_extra_jump)||input_check_released(key_extra_jump2)||input_check_released(key_extra_jump3)||input_check_released(key_extra_jump4)||input_check_released(key_extra_jump5)||input_check_released(key_extra_jump6) ||input_check_pressed(key_jc_jump)||input_check_released(key_jc_jump) {
         player_release_jump();
     }
     if input_check_pressed(key_shoot) {

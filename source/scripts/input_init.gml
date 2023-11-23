@@ -31,8 +31,15 @@ input_define(key_restart, "Restart Button", ord("R"), true);
 input_define(key_skip,    "Skip Button",    ord("S"), true);
 input_define(key_suicide, "Suicide Button", ord("Q"), true);
 input_define(key_pause,   "Pause Button",   ord("P"), true);
+if(global.biogom_jump=true) {
 input_define(key_jc_jump, "Jump Cancel", 255, true);
 input_define(key_extra_jump,   "Extra Jump",   255, true);
+input_define(key_extra_jump2,   "Extra Jump 2",   255, true);
+input_define(key_extra_jump3,   "Extra Jump 3",   255, true);
+input_define(key_extra_jump4,   "Extra Jump 4",   255, true);
+input_define(key_extra_jump5,   "Extra Jump 5",   255, true);
+input_define(key_extra_jump6,   "Extra Jump 6",   255, true);
+}
 
 // Unbindable inputs, hence no need for a name.
 input_define(key_menu_left,    "", vk_left,  false);

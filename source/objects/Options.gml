@@ -186,7 +186,7 @@ if state == state_options {
     draw_sprite(sprPlayerIdle, animation_timer / 5, options_x_margin - 16, options_y_start + options_y_step * current_option + 2);
 }
 else if state == state_keyboard_controls {
-    yy = keyboard_y_start;
+    yy = 300;
     draw_set_font(keyboard_font);
 
     for(i = 0; i < ds_list_size(global.input_rebindable_list) + 1; i += 1) {
@@ -207,14 +207,14 @@ else if state == state_keyboard_controls {
         }
 
         draw_set_halign(fa_left);
-        draw_text_outlined(keyboard_x_margin, yy, _row_name, c_white, c_black, 2);
+        draw_text_outlined(keyboard_x_margin, yy-keyboard_y_step * current_key, _row_name, c_white, c_black, 2);
         draw_set_halign(fa_right);
-        draw_text_outlined(global.game_width - keyboard_x_margin, yy, _row_value, c_white, c_black, 2);
+        draw_text_outlined(global.game_width - keyboard_x_margin, yy-keyboard_y_step * current_key, _row_value, c_white, c_black, 2);
 
         yy += keyboard_y_step;
     }
 
-    draw_sprite(sprPlayerIdle, animation_timer / 5, keyboard_x_margin - 16, keyboard_y_start + keyboard_y_step * current_key + 2);
+    draw_sprite(sprPlayerIdle, animation_timer / 5, keyboard_x_margin - 16, 304);
 }
 
 menu_draw_navigation(false);
