@@ -71,12 +71,19 @@ applies_to=self
 if !picked {
     instance_destroy_id(SaveHard)
     picked=true
+    image_alpha=0.65
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
+*/
+/*desc
+    Golden berry from Celeste.
+    You have to place GoldenTrigger at the End.
+    Collected golden data can be accessed with save_get("golden_" + room_get_name(startingroom))
+    By default having golden will disable autosave.
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1

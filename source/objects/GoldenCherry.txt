@@ -2,6 +2,6 @@ sprite=sprGoldenCherryOld
 visible=1
 solid=0
 persistent=1
-depth=15
+depth=254254
 parent=
 mask=

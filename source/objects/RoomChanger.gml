@@ -16,6 +16,15 @@ type = type_normal;
 x_offset = 0;
 y_offset = 0;
 autosave = false;
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(instance_exists(GoldenCherry)) {
+    if(GoldenCherry.picked) autosave=false
+}
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
