@@ -43,9 +43,9 @@ var _current_max_vspeed, _ice, _conveyor;
 
 _ice = instance_place(x, y + global.grav, IceBlock);
 
-vine_direction = (distance_to_object(VineTechRight)<=1 && place_free(x,y+global.grav)) || place_meeting(x+1, y, VineRight);
+vine_direction = (distance_to_object(VineTechRight)<=1) || place_meeting(x+1, y, VineRight);
 if vine_direction == 0 {
-    vine_direction = -1 * ((distance_to_object(VineTechLeft)<=1 && place_free(x,y+global.grav)) || place_meeting(x - 1, y, VineLeft));
+    vine_direction = -1 * ((distance_to_object(VineTechLeft)<=1) || place_meeting(x - 1, y, VineLeft));
 }
 
     _icevine = place_meeting(x + 1, y, IceVineRight)||place_meeting(x - 1, y, IceVineLeft)
@@ -174,7 +174,7 @@ applies_to=self
 */
 /// Vines
 
-if vine_direction != 0 {
+if vine_direction != 0 && place_free(x,y+global.grav) {
 
     if vine_direction == 1 {
         x_scale = -1;
