@@ -14,7 +14,7 @@ max_vspeed = 9;
 run_speed = 3;
 
 // State
-shift_pressed=input_check(key_jump)||((input_check(key_extra_jump)||input_check(key_jc_jump))&&global.biogom_jump)
+shift_pressed=input_check(key_jump)||((input_check(key_extra_jump)||input_check(key_extra_jump2)||input_check(key_extra_jump3)||input_check(key_extra_jump4)||input_check(key_extra_jump5)||input_check(key_extra_jump6)||input_check(key_jc_jump))&&global.biogom_jump)
 _icevine=false;
 frozen = false;
 gravity = grav * global.grav;

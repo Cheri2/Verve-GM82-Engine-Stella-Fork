@@ -122,6 +122,9 @@
 +Items
 	|sprItem
 	|sprBossItem
+	|sprGoldenCherryOld
+	|sprGOldenCherryCollected
+	|sprGoldenCherryCrown
 +Misc
 	|sprEmpty
 	|spr1x1

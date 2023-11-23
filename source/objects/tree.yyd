@@ -112,6 +112,8 @@
 	|Item
 	|BossItem
 	|GameClear
+	|GoldenTrigger
+	|GoldenCherry
 +Sample
 	+Boss
 		|objSampleBoss
