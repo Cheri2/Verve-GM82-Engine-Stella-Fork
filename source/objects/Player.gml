@@ -49,6 +49,7 @@ if vine_direction == 0 {
 }
 
     _icevine = place_meeting(x + 1, y, IceVineRight)||place_meeting(x - 1, y, IceVineLeft)
+    maker_vine = place_meeting(x + 1, y, MakerVineRight)||place_meeting(x - 1, y, MakerVineLeft)
 // Horizontal movement
 h_input = 0;
 if !frozen {
@@ -130,7 +131,7 @@ if(input_check_released(key_jump)||input_check_released(key_extra_jump)||input_c
     shift_pressed=0
 }
     if input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump2)||input_check_pressed(key_extra_jump3)||input_check_pressed(key_extra_jump4)||input_check_pressed(key_extra_jump5)||input_check_pressed(key_extra_jump6)||input_check_pressed(key_jc_jump) {
-        player_try_jump();
+        if(maker_vine=false) player_try_jump();
     }
     if input_check_released(key_jump)||input_check_released(key_extra_jump)||input_check_released(key_extra_jump)||input_check_released(key_extra_jump2)||input_check_released(key_extra_jump3)||input_check_released(key_extra_jump4)||input_check_released(key_extra_jump5)||input_check_released(key_extra_jump6) ||input_check_pressed(key_jc_jump)||input_check_released(key_jc_jump) {
         player_release_jump();
@@ -153,7 +154,7 @@ if(input_check_released(key_jump)) {
     shift_pressed=0
 }
     if input_check_pressed(key_jump) {
-        player_try_jump();
+        if(maker_vine=false) player_try_jump();
     }
     if input_check_released(key_jump) {
         player_release_jump();
@@ -183,7 +184,28 @@ if vine_direction != 0 && place_free(x,y+global.grav) {
     }
 
     if(!_icevine) vspeed = 2 * global.grav;
-
+    if(maker_vine) {
+        if(global.biogom_jump) {
+            if(input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump2)||input_check_pressed(key_extra_jump3)||input_check_pressed(key_extra_jump4)||input_check_pressed(key_extra_jump5)||input_check_pressed(key_extra_jump6)||input_check_pressed(key_jc_jump)) {
+            hspeed = 15;
+            vspeed = -9 * global.grav;
+            sound_play("player_wall_jump");
+            if vine_direction == 1 {
+            hspeed *= -1;
+                }
+            }
+        }
+        else {
+            if(input_check_pressed(key_jump)) {
+                        hspeed = 15;
+            vspeed = -9 * global.grav;
+            sound_play("player_wall_jump");
+            if vine_direction == 1 {
+            hspeed *= -1;
+                }
+            }
+            }
+        }
     if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
         if shift_pressed {
             hspeed = 15;

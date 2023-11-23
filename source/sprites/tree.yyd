@@ -98,9 +98,11 @@
 	|sprVineLeft
 	|sprVineTechLeft
 	|sprIceVineLeft
+	|sprVineMakerLeft
 	|sprVineRight
 	|sprVineTechRight
 	|sprIceVineRight
+	|sprVineMakerRight
 	|sprJumpRefresher
 	|sprGravityUp
 	|sprGravityDown

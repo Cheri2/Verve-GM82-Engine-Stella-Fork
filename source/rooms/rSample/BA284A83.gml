@@ -1,3 +1,3 @@
 //gm82 fields begin
-text="I'm a sign!"
+text="Engine Sample Room!"
 //gm82 fields end

@@ -68,7 +68,9 @@
 		|ConveyorRight
 	+Extended Vines
 		|IceVineLeft
+		|MakerVineLeft
 		|IceVineRight
+		|MakerVineRight
 		|VineTechLeft
 		|VineTechRight
 	+Jump

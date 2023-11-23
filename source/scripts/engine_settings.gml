@@ -35,6 +35,8 @@ global.debug_key = vk_control;
     global.optimize_solids = 2;
     // Makes saving preserve subpixels
     global.save_subpixel = false;
+    // false = requires contact with save to use it
+    global.shoot_save = false;
 
 // Player behavior
     // Makes the player die once they entirely leave the room.

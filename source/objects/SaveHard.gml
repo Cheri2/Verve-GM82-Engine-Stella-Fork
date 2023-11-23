@@ -31,7 +31,7 @@ if !init {
     init = true;
 }
 
-if place_meeting(x, y, Bullet) {
+if place_meeting(x, y, Bullet) && global.shoot_save {
     event_user(0);
 }
 
