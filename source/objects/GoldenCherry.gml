@@ -71,7 +71,6 @@ applies_to=self
 if !picked {
     instance_destroy_id(SaveHard)
     picked=true
-    image_alpha=0.65
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION
