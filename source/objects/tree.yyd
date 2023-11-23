@@ -69,6 +69,8 @@
 	+Extended Vines
 		|IceVineLeft
 		|IceVineRight
+		|VineTechLeft
+		|VineTechRight
 	+Jump
 		|StarTripleJump
 		|StarSingleJump

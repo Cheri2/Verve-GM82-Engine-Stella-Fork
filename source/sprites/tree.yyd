@@ -96,8 +96,10 @@
 	|sprWaterGroundJump
 	|sprWaterCatharsis
 	|sprVineLeft
+	|sprVineTechLeft
 	|sprIceVineLeft
 	|sprVineRight
+	|sprVineTechRight
 	|sprIceVineRight
 	|sprJumpRefresher
 	|sprGravityUp

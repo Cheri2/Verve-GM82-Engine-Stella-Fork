@@ -8,6 +8,7 @@ global.debug = true;
 // Set to noone to use no debug key, e.g. yoyoyo engine behavior.
 global.debug_key = vk_control;
 
+
 // Game properties
     // The title of your game, used in the window bar and the default title screen.
     global.game_title = "Verve GM8.2 Engine";
@@ -46,6 +47,8 @@ global.debug_key = vk_control;
     // Useful in e.g. very cramped needle where running into a warp can easily result in death.
     global.clear_input_on_warp = false;
     global.clear_input_on_restart = false;
+    // dedicated jump cancel and cactus key
+    global.biogom_jump = true;
 
 // Difficulties
     global.difficulty_count = 4;

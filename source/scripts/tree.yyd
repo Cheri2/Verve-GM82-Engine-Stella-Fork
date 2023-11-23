@@ -112,3 +112,6 @@
 	|ease_value
 +Player Extended
 	|check_plat_snap
+	|check_shift_pressed
+	|check_shift
+	|check_shift_released

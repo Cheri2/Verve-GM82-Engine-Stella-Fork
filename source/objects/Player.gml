@@ -14,6 +14,7 @@ max_vspeed = 9;
 run_speed = 3;
 
 // State
+shift_pressed=input_check(key_jump)||((input_check(key_extra_jump)||input_check(key_jc_jump))&&global.biogom_jump)
 _icevine=false;
 frozen = false;
 gravity = grav * global.grav;
@@ -42,9 +43,9 @@ var _current_max_vspeed, _ice, _conveyor;
 
 _ice = instance_place(x, y + global.grav, IceBlock);
 
-vine_direction = place_meeting(x+1, y, VineRight);
+vine_direction = (distance_to_object(VineTechRight)<=1 && place_free(x,y+global.grav)) || place_meeting(x+1, y, VineRight);
 if vine_direction == 0 {
-    vine_direction = -place_meeting(x - 1, y, VineLeft);
+    vine_direction = -1 * ((distance_to_object(VineTechLeft)<=1 && place_free(x,y+global.grav)) || place_meeting(x - 1, y, VineLeft));
 }
 
     _icevine = place_meeting(x + 1, y, IceVineRight)||place_meeting(x - 1, y, IceVineLeft)
@@ -121,8 +122,37 @@ action_id=603
 applies_to=self
 */
 /// Actions
-
+if(global.biogom_jump) {
 if !frozen {
+    if(input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_jc_jump)) {
+    shift_pressed=1
+}
+if(input_check_released(key_jump)||input_check_released(key_extra_jump) || input_check_released(key_jc_jump)) {
+    shift_pressed=0
+}
+    if input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_jc_jump) {
+        player_try_jump();
+    }
+    if input_check_released(key_jump)||input_check_released(key_extra_jump)||input_check_pressed(key_jc_jump) {
+        player_release_jump();
+    }
+    if input_check_pressed(key_shoot) {
+        player_shoot();
+    }
+    if input_check_pressed(key_suicide) {
+        player_kill();
+    }
+}
+
+}
+else {
+if !frozen {
+    if(input_check_pressed(key_jump)) {
+    shift_pressed=1
+}
+if(input_check_released(key_jump)) {
+    shift_pressed=0
+}
     if input_check_pressed(key_jump) {
         player_try_jump();
     }
@@ -135,6 +165,7 @@ if !frozen {
     if input_check_pressed(key_suicide) {
         player_kill();
     }
+}
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -155,7 +186,7 @@ if vine_direction != 0 {
     if(!_icevine) vspeed = 2 * global.grav;
 
     if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
-        if input_check(key_jump) {
+        if shift_pressed {
             hspeed = 15;
             vspeed = -9 * global.grav;
             sound_play("player_wall_jump");
