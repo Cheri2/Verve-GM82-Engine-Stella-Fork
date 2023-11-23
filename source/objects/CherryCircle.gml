@@ -64,7 +64,7 @@ for (i=0;i<num_cherries;i+=1) {
     o[i].y=y+lengthdir_y(r,a)
 }
 
-time+=dt/(cycle_length*50)
+time+=1/(cycle_length*50)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
