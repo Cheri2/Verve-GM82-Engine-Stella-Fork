@@ -44,6 +44,7 @@
 	|KillerBlock
 	|KillerBlockLegacy
 	|Cherry
+	|CherryCircle
 +Saves
 	|SaveMedium
 	|SaveMediumFlip
