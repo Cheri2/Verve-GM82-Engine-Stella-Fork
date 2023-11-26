@@ -19,6 +19,7 @@ _icevine=false;
 frozen = false;
 gravity = grav * global.grav;
 air_jumps = max_air_jumps;
+can_single_jump=0
 h_input = 0;
 x_scale = 1;
 has_bow = (save_get("difficulty") == 0);

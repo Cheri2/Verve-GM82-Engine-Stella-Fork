@@ -116,6 +116,8 @@
 		|sprStarGray
 		|sprStarYellow
 		|sprStarBlack
+	|sprBetterRefresher
+	|sprDoubleRefresher
 +Triggers
 	|sprTriggerMask
 	|sprTrigger
@@ -132,3 +134,9 @@
 	|spr1x1
 |spr1x2
 |spr32x32
+|sprRedlineL
+|sprRedLineUL
+|sprRedLineS
+|sprRedLineUS
+|sprRedLineX
+|sprRedLineUX

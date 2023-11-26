@@ -83,6 +83,7 @@ applies_to=self
     You have to place GoldenTrigger at the End.
     Collected golden data can be accessed with save_get("golden_" + room_get_name(startingroom))
     By default having golden will disable autosave.
+    Original codes by soweli
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1

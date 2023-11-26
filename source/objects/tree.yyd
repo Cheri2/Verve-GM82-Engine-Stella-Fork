@@ -84,9 +84,18 @@
 		|AutoBounce
 		|ShootRefresherR
 		|ShootRefresherL
+	+Aligns
+		|AlignIndicator
+		|VstringIndicator
+		|AlignRefresher
+		|VstringRefresher
+		|AlignRefresherDouble
+		|VstringRefresherDouble
 	|PlatformTouch
 	|VineLeft
 	|VineRight
+	|BetterJumpRefresher
+	|SingleJumpRefresher
 	|JumpRefresher
 	|GravityUp
 	|GravityDown

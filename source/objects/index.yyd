@@ -112,3 +112,11 @@ GoldenTrigger
 MakerVineLeft
 MakerVineRight
 CherryCircle
+AlignIndicator
+AlignRefresher
+AlignRefresherDouble
+BetterJumpRefresher
+SingleJumpRefresher
+VstringIndicator
+VstringRefresher
+VstringRefresherDouble
