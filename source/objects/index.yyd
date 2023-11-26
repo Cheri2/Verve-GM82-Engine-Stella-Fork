@@ -120,3 +120,5 @@ SingleJumpRefresher
 VstringIndicator
 VstringRefresher
 VstringRefresherDouble
+JumpOverRefresher
+WaterGrav

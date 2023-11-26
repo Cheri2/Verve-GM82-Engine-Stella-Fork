@@ -92,6 +92,7 @@
 	|sprPlatformWater
 	|sprWaterCry
 	|sprWaterReverse
+	|sprWaterGrav
 	|sprWaterRefreshing
 	|sprWaterGroundJump
 	|sprWaterCatharsis
@@ -117,6 +118,7 @@
 		|sprStarYellow
 		|sprStarBlack
 	|sprBetterRefresher
+	|sprExtendedRefresher
 	|sprDoubleRefresher
 +Triggers
 	|sprTriggerMask

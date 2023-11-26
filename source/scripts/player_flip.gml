@@ -6,7 +6,8 @@
 if argument_count > 0 if argument[0] == global.grav {
     exit;
 }
-
+if(global.grav>0) sound_play("sndGravity")
+else sound_play("sndGravityBack")
 global.grav *= -1;
 
 with(Player) {

@@ -55,6 +55,7 @@
 +Gimmicks
 	+Water
 		|Water
+		|WaterGrav
 		|WaterRefreshing
 		|WaterGroundJump
 		|PlatformWater
@@ -91,11 +92,13 @@
 		|VstringRefresher
 		|AlignRefresherDouble
 		|VstringRefresherDouble
+	+Jump Refreshers
+		|BetterJumpRefresher
+		|JumpOverRefresher
+		|SingleJumpRefresher
 	|PlatformTouch
 	|VineLeft
 	|VineRight
-	|BetterJumpRefresher
-	|SingleJumpRefresher
 	|JumpRefresher
 	|GravityUp
 	|GravityDown
