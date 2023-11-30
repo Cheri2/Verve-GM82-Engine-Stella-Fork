@@ -25,7 +25,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-other.vspeed=-other.gravity
+if(other.vspeed>-other.gravity) other.vspeed=-other.gravity
 #define Other_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
