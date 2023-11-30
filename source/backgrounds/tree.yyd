@@ -3,16 +3,17 @@
 +Tiles
 	|bDefaultTiles
 	|bTree
-|background4
-|background5
-|background6
-|background7
-|background8
-|background9
-|background10
-|background11
-|background12
-|background13
-|background14
-|background15
-|background16
++Sample
+	|background4
+	|background15
+	|background14
+	|background16
+	|background13
+	|background11
+	|background10
+	|background9
+	|background12
+	|background8
+	|background7
+	|background5
+	|background6

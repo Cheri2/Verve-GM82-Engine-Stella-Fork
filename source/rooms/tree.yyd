@@ -3,7 +3,9 @@
 	|rTitle
 	|rMenu
 	|rOptions
-+Game
++Sample
 	|rSample
 	|room12
 	|room13
++Game
+	|rTemplate

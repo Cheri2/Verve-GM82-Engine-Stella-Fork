@@ -87,6 +87,7 @@
 		|ShootRefresherL
 	+Aligns
 		|AlignIndicator
+		|StickyWall
 		|VstringIndicator
 		|AlignRefresher
 		|VstringRefresher
