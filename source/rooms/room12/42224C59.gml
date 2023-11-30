@@ -1,3 +1,3 @@
 //gm82 fields begin
-text="Engine Sample Room!"
+bg=background7
 //gm82 fields end
