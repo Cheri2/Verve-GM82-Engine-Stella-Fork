@@ -12,7 +12,7 @@ action_id=603
 applies_to=self
 */
 image_alpha=1
-#define Collision_Player
+#define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -24,7 +24,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if  image_alpha>0.5 {
+if  image_alpha>0.5 if(place_meeting(x,y,Player) {
     with(Player) {
         air_jumps += 1;
     }

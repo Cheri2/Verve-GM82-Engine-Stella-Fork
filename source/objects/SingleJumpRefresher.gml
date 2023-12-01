@@ -24,7 +24,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if image_alpha>0.5 {
+if  image_alpha>0.5 if(place_meeting(x,y,Player) {
     with(Player) {
         can_single_jump=1
     }
