@@ -559,7 +559,7 @@ applies_to=self
                 if (!place_free(x,y)) {
                     //crushed!
                     if (other.vspeed>0) {
-                        if (!global.strong_platforms) move_outside_solid(270,20)
+                        if (!global.strong_platforms) move_outside_solid(90,20)
                     } else y=oy
                 } else {
                     //land on it
