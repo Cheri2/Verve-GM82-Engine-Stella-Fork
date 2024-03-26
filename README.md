@@ -5,8 +5,8 @@ Verve 8.2 engine but for gimmick and precision needle. More accurate physics in 
 - [ ] PTJ (Platform triple jump)
 - [x] NANG Stars
 - [x] Shoot Refreshers
-- [ ] Align and Vstring indicators (Redlines)
-- [ ] Extended Jump Refreshers
+- [x] Align and Vstring indicators (Redlines)
+- [x] Extended Jump Refreshers
 - [ ] Port of old visual codes from Korean IWC
 - [x] Pause cheese prevention
 - [ ] Making sure fpi does work as it should in yuuutu
@@ -15,6 +15,7 @@ Verve 8.2 engine but for gimmick and precision needle. More accurate physics in 
 - [ ] Variety 100 gimmicks
 - [x] Golden berries
 - [ ] Exclusive Fullscreen
+- [x] More Gimmicks!
 
 # Credits
 soweli - Golden Berry original author
