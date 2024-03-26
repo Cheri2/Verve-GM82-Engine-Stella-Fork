@@ -362,8 +362,14 @@ var yy, _dir, _feet_y, _feet_y_prev, _platform_floor, _platform_floor_prev;
 var _upwards_platform_vspeed, _downwards_platform_vspeed;
 var _above_platform_prev, _on_or_below_platform_now, _landed_on_platform;
 var _below_platform_prev, _on_or_above_platform_now, _jumped_out;
+var _is_forcefully_pushed, _can_freely_snap;
 
 with(Platform) {
+    if is_undefined(platform_floor_prev) {
+        // Platform didn't exist one frame ago
+        continue;
+    }
+
     if other.bbox_right < bbox_left || other.bbox_left > bbox_right {
         continue;
     }
@@ -383,24 +389,25 @@ with(Platform) {
     _jumped_out = _below_platform_prev && _on_or_above_platform_now;
 
     if _landed_on_platform || (_jumped_out && snap) {
+        // Try to snap to platform
         with(other) {
             // Target y position to snap to
             yy = floor(_platform_floor + round(y) - _feet_y - global.grav);
 
-            if global.strong_platforms && _landed_on_platform {
+            _is_forcefully_pushed = global.strong_platforms && _landed_on_platform;
+            _can_freely_snap = place_free(x, yy);
+            
+            if _is_forcefully_pushed || _can_freely_snap {
+                // Snap to platform
                 y = yy;
                 player_land();
             }
             else {
-                if place_free(x, yy) {
-                    y = yy;
-                    player_land();
-                }
-                else {
-                    _dir = 90 + 180 * (yy > y);
-                    move_contact_solid(_dir, abs(yy - y));
-                }
+                // Block in the way, move against it
+                _dir = 90 + 180 * (yy > y);
+                move_contact_solid(_dir, abs(yy - y));
             }
+            
             if other.hspeed != 0 {
                 if !place_free(x + other.hspeed, y) {
                     move_contact_solid(180 * (other.hspeed < 0), abs(other.hspeed));
@@ -430,7 +437,7 @@ if place_meeting(x, y, PlayerKiller) {
     player_kill();
 }
 
-if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
+if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
     _warp = noone;
     with(RoomChanger) {
         if type == type_outside || type == type_wrap_around if place_meeting(x, y, Player) {
@@ -443,7 +450,7 @@ if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbo
             event_user(0);
         }
     }
-    else {
+    else if global.killer_room_border {
         player_kill();
     }
 }
@@ -573,6 +580,12 @@ applies_to=self
 */
 if !is_in_game() {
     instance_destroy();
+    exit;
+}
+
+if global.save_autosave {
+    save_save();
+    global.save_autosave = false;
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -597,7 +610,7 @@ if global.debug_god_mode {
     _draw_alpha *= 0.75;
 }
 if global.debug_infinite_jump {
-    _draw_color = color_blend(_draw_color, c_blue);
+    _draw_color = color_blend(_draw_color, c_aqua);
 }
 if global.debug_show_mask {
     _draw_sprite = mask_index;

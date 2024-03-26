@@ -71,3 +71,4 @@ dialogue_defaults()
     global.camera_leave_room_default = false;
     // Whether the camera is locked to a screen grid instead of following the player.
     global.camera_screen_lock_default = true;
+    global.camera_target_default = Player;

@@ -87,6 +87,6 @@ if room_exists(room_to) {
     room_goto(room_to);
 io_set_roomend_clear(true);
     if autosave {
-        save_save_asap();
+        save_save_asap(true);
     }
 }
