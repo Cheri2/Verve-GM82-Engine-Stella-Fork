@@ -13,6 +13,9 @@
 		|camera_default
 		|camera_update
 		|camera_snap
+		|camera_set_target
+		|camera_reset_target
+		|camera_set_enabled
 	+Input
 		|input_init
 		|input_check
