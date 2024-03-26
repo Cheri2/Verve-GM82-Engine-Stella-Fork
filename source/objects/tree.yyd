@@ -31,12 +31,13 @@
 		|Platform
 		|GeneralPlatform
 	|PushBlock
+	|BlockNilou
 +Killers
 	|PlayerKiller
 	|SpikeUp
 	|SpikeRight
-	|SpikeDown
 	|SpikeLeft
+	|SpikeDown
 	|MiniSpikeUp
 	|MiniSpikeRight
 	|MiniSpikeDown
@@ -45,6 +46,9 @@
 	|KillerBlockLegacy
 	|Cherry
 	|CherryCircle
+	+fake
+		|object150
+		|object151
 +Saves
 	|SaveMedium
 	|SaveMediumFlip
@@ -56,12 +60,16 @@
 	+Water
 		|Water
 		|WaterGrav
+		|WaterDream
 		|WaterRefreshing
 		|WaterGroundJump
+		|PlatformWater2
 		|PlatformWater
 		|WaterCatharsis
 		|WaterCry
 		|WaterReverse
+		|PosVS
+		|NegVS
 	+Blocks
 		|BlockFake
 		|BlockInvisible
@@ -88,6 +96,7 @@
 	+Aligns
 		|AlignIndicator
 		|StickyWall
+		|UnstickyWall
 		|VstringIndicator
 		|AlignRefresher
 		|VstringRefresher
@@ -102,8 +111,16 @@
 	|VineRight
 	|JumpRefresher
 	|GravityUp
+	|GravityUpHalf
+	|GravityUpUltra
 	|GravityDown
+	|GravityDownHalf
+	|GravityDownUltra
 	|Sign
+	|bestGuyFlag
+	|PlatformSwap
+	|singleJumpFlag
+	|objSprinkler
 +Triggers
 	|Trigger
 	|TriggerManager
@@ -126,6 +143,8 @@
 	|Warp
 +Items
 	|Item
+	|ItemDisplay
+	|ItemDisplayExt
 	|BossItem
 	|GameClear
 	|GoldenCherry
@@ -139,3 +158,19 @@
 	|SampleStretchingBlock
 +Visuals
 	|SurfaceBlock
+	|SurfaceHabluka
+	|object160
++Legacy
+	|object128
+	|object158
++Dialogue
+	|DialogueHandlerParent
+	|UpArrow
+	|KidCharacter
+	|Madeline
+	|ExampleMovingDialogue
+	|FlagSetter
+	|DialogueHandlerInteract
+	|DialogueHandlerTriggered
+|StellaKiller
+|objPlaceholder

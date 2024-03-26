@@ -40,6 +40,13 @@ if input_check_pressed(key_shoot) {
         event_user(0);
     }
 }
+
+if keyboard_check_pressed(vk_backspace) && !instance_exists(GoldenCherry) && global.hub_room != noone {
+        if place_meeting(x, y, Player) if !Player.frozen {
+        instance_destroy_id(Player);
+        room_goto(rHome)
+    }
+}
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

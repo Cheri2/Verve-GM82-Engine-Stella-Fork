@@ -52,11 +52,14 @@
 		|sprSlopeTopLeft
 		|sprSlopeBottomLeft
 	|sprPlatform9slice
+	|sprPlatform9slice2
 +Killers
 	|sprSpikeUp
 	|sprSpikeRight
+	|sprSpikeRightInv
 	|sprSpikeDown
 	|sprSpikeLeft
+	|sprSpikeLeftInv
 	|sprMiniSpikeUp
 	|sprMiniSpikeRight
 	|sprMiniSpikeDown
@@ -88,38 +91,51 @@
 	|sprSaveVeryHard
 	|sprSaveVeryHardFlip
 +Gimmicks
-	|sprWater
-	|sprPlatformWater
-	|sprWaterCry
-	|sprWaterReverse
-	|sprWaterGrav
-	|sprWaterRefreshing
-	|sprWaterGroundJump
-	|sprWaterCatharsis
-	|sprVineLeft
-	|sprVineTechLeft
-	|sprIceVineLeft
-	|sprVineMakerLeft
-	|sprVineRight
-	|sprVineTechRight
-	|sprIceVineRight
-	|sprVineMakerRight
-	|sprJumpRefresher
-	|sprGravityUp
-	|sprGravityDown
-	|sprSign
-	|sprPlatformCherry
-	|sprBounceCherry
-	|sprShootRefresherL
-	|sprShootRefresherR
-	|sprWarp
 	+NANG
 		|sprStarGray
 		|sprStarYellow
 		|sprStarBlack
-	|sprBetterRefresher
-	|sprExtendedRefresher
-	|sprDoubleRefresher
+	|sprBounceCherry
+	|sprCellWater
+	|sprPlatformCherry
+	|sprPlatformWater2
+	|sprShootRefresherL
+	|sprShootRefresherR
+	|sprSign
+	|sprWarp
+	+Vine
+		|sprVineTechLeft
+		|sprIceVineLeft
+		|sprVineMakerLeft
+		|sprVineLeft
+		|sprVineTechRight
+		|sprVineMakerRight
+		|sprVineRight
+		|sprIceVineRight
+	+Water
+		|sprWaterDream
+		|sprWaterPurple
+		|sprPlatformWater
+		|sprWaterCry
+		|sprWaterReverse
+		|sprWaterGrav
+		|sprWaterGroundJump
+		|sprWaterRefreshing
+		|sprWaterCatharsis
+		|sprWater
+		|sprWaterLemon
+	+JumpRef
+		|sprJumpRefresher
+		|sprDoubleRefresher
+		|sprExtendedRefresher
+		|sprBetterRefresher
+	+Grav
+		|sprGravityDownUlt
+		|sprGravityDown
+		|sprGravityDownEmpty
+		|sprGravityUpUlt
+		|sprGravityUpEmpty
+		|sprGravityUp
 +Triggers
 	|sprTriggerMask
 	|sprTrigger
@@ -131,15 +147,39 @@
 	|sprGoldenCherryOld
 	|sprGOldenCherryCollected
 	|sprGoldenCherryCrown
+	+Maplestory
+		|sprItemPendant
+		|sprItemRing
+		|sprItemBox
+		|sprItemEarring
 +Misc
 	|sprEmpty
 	|spr1x1
 |spr1x2
 |spr32x32
+|spr16x16
 |sprRedlineL
 |sprYellowLine
+|sprPurpleLine
 |sprRedLineUL
 |sprRedLineS
 |sprRedLineUS
 |sprRedLineX
 |sprRedLineUX
+|sprite154
+|sprite169
+|sprDialogueHandler
+|sprKidHead
+|sprKidCharacter
+|sprDialogueHandler32x32Trans
+|sprKidHeadBow
+|sprMadeline
+|sprNahida
+|sprMadelineHead
+|sprStellaHead
+|sprCeleSpike
+|sprFlagSetter
+|sprChatIcon
+|sprStellaBW
+|sprDendro
+|sprite186

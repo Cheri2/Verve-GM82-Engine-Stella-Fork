@@ -46,15 +46,21 @@ else {
 draw_set_halign(fa_middle);
 draw_text(xx + 64, yy + 49, _top_text);
 
-for(i = 0; i < 4; i += 1) {
-    if save_get(str_cat("item", i)) {
-        draw_sprite(sprItem, 0, xx + 32 * i, yy + 128);
+    if save_get(str_cat("item", 0)) {
+        draw_sprite(sprite149, 0, xx + 16, yy + 128);
     }
-    if save_get(str_cat("boss_item", i)) {
-        draw_sprite(sprBossItem, 0, xx + 32 * i, yy + 160);
+        if save_get(str_cat("item", 1)) {
+        draw_sprite(sprite150, 0, xx + 48, yy + 128);
     }
-}
-
+        if save_get(str_cat("item", 2)) {
+        draw_sprite(sprite151, 0, xx + 80, yy + 128);
+    }
+        if save_get(("golden_" + "rHome")) {
+        draw_sprite(sprite152, 0, xx+30,yy+176)
+        }
+                if save_get(str_cat("item", 4)) {
+        draw_sprite(sprItem, 0, xx + 64, yy + 176);
+    }
 if save_get("clear") {
     draw_set_font(fDefaultBig);
     draw_text(xx + 65, yy + 215, "Clear!");

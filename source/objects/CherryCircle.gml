@@ -123,6 +123,7 @@ for (i=0;i<num_cherries;i+=1) {
     o[i]=instance_create(x,y,Cherry)
     o[i].sprite_index=sprite_index
     o[i].depth=depth
+    o[i].destroy_outside_room=false
 }
 
 event_step()

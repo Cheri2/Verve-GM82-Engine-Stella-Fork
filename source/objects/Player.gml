@@ -14,7 +14,7 @@ max_vspeed = 9;
 run_speed = 3;
 
 // State
-shift_pressed=input_check(key_jump)||((input_check(key_extra_jump)||input_check(key_extra_jump2)||input_check(key_extra_jump3)||input_check(key_extra_jump4)||input_check(key_extra_jump5)||input_check(key_extra_jump6)||input_check(key_jc_jump))&&global.biogom_jump)
+shift_pressed=input_check(key_jump)
 _icevine=false;
 frozen = false;
 gravity = grav * global.grav;
@@ -23,7 +23,8 @@ can_single_jump=0
 h_input = 0;
 x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
-on_floor = false;
+waterLogged = 0;
+on_floor = 0;
 vine_direction = false;
 feet_y_prev = 0;
 
@@ -33,6 +34,7 @@ if global.save_autosave {
 }
 
 player_set_mask();
+vine_jumped=1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -63,7 +65,7 @@ if !frozen {
 if h_input != 0 if vine_direction == 0 {
     x_scale = h_input;
 }
-
+if(!place_meeting(x,y,WaterDream)) {
 if _ice == noone {
 // this is required for precise vine tech
     if ((vine_direction==h_input)||h_input==0||vine_direction==0) hspeed = h_input * run_speed;
@@ -77,19 +79,19 @@ else {
         hspeed -= sign(hspeed) * min(_ice.slip, abs(hspeed));
     }
 }
-
+}
 _conveyor = instance_place(x, y + global.grav, ConveyorLeft);
 if _conveyor != noone {
-    hspeed += _conveyor.spd;
+    hspeed = h_input * run_speed + _conveyor.spd;
 }
 _conveyor = instance_place(x, y + global.grav, ConveyorRight);
 if _conveyor != noone {
-    hspeed += _conveyor.spd;
+    hspeed = h_input * run_speed + _conveyor.spd;
 }
 
 // Vertical movement
 _current_max_vspeed = max_vspeed;
-if place_meeting(x, y, WaterCatharsis) {
+if place_meeting(x, y, WaterCatharsis) || waterLogged {
     _current_max_vspeed = 2;
     if place_meeting(x, y, WaterRefreshing) {
         air_jumps = max_air_jumps;
@@ -114,7 +116,7 @@ if on_floor {
         on_floor = false;
     }
 }
-
+vine_jumped=0
 gravity = global.grav * grav;
 feet_y_prev = ternary(global.grav == 1, bbox_bottom, bbox_top);
 /*"/*'/**//* YYD ACTION
@@ -157,8 +159,15 @@ if(input_check_released(key_jump)) {
     if input_check_pressed(key_jump) {
         if(maker_vine=false) player_try_jump();
     }
-    if input_check_released(key_jump) {
+    if(config_get("extendedmovement")) {
+    if (input_check_released(key_jump)&&!input_check(key_up)) || (input_check_pressed(key_jump)&&input_check(key_down)) {
         player_release_jump();
+    }
+    }
+    else {
+        if input_check_released(key_jump) {
+        player_release_jump();
+    }
     }
     if input_check_pressed(key_shoot) {
         player_shoot();
@@ -189,6 +198,7 @@ if vine_direction != 0 && place_free(x,y+global.grav) {
         if(global.biogom_jump) {
             if(input_check_pressed(key_jump)||input_check_pressed(key_extra_jump)||input_check_pressed(key_extra_jump2)||input_check_pressed(key_extra_jump3)||input_check_pressed(key_extra_jump4)||input_check_pressed(key_extra_jump5)||input_check_pressed(key_extra_jump6)||input_check_pressed(key_jc_jump)) {
             hspeed = 15;
+            vine_jumped=1
             vspeed = -9 * global.grav;
             sound_play("player_wall_jump");
             if vine_direction == 1 {
@@ -199,6 +209,7 @@ if vine_direction != 0 && place_free(x,y+global.grav) {
         else {
             if(input_check_pressed(key_jump)) {
                         hspeed = 15;
+                        vine_jumped=1
             vspeed = -9 * global.grav;
             sound_play("player_wall_jump");
             if vine_direction == 1 {
@@ -210,6 +221,7 @@ if vine_direction != 0 && place_free(x,y+global.grav) {
     if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
         if shift_pressed {
             hspeed = 15;
+            vine_jumped=1
             vspeed = -9 * global.grav;
             sound_play("player_wall_jump");
         }
@@ -325,6 +337,8 @@ if !place_free(x + hspeed, y + vspeed) {
             player_hit_ceiling();
         }
         else {
+             if(place_meeting(x, y+vspeed, BlockNilou)&&!place_meeting(x,y+vspeed,Block)) player_land_half()
+             else
             player_land();
         }
     }
@@ -595,5 +609,10 @@ draw_sprite_ext(_draw_sprite, image_index, _draw_x, _draw_y, x_scale, _draw_y_sc
 
 // Draw the bow
 if has_bow {
+    if(!can_single_jump=1) {
     draw_sprite_ext(sprPlayerBow, clamp(air_jumps,0,5), _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+    }
+    else {
+    draw_sprite_ext(sprPlayerBow, 2, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+    }
 }

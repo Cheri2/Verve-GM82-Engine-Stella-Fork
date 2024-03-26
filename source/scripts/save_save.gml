@@ -21,7 +21,7 @@ save_set("saved", true);
 save_set("room", room);
 if(!global.save_subpixel) {
     save_set("x", floor(Player.x));
-    save_set("y", floor(Player.y));
+    save_set("y", floor(Player.y)+ternary(global.grav<0,1,0));
 }
 else {
     save_set("x", Player.x);

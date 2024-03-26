@@ -8,6 +8,7 @@ k=surface_create(800,608)
 v=surface_create(800,608)
 bg=noone
 with(Block) if(object_index=Block) sprite_index=spr32x32
+with(BlockMini) sprite_index=spr16x16
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -39,7 +40,8 @@ surface_set_target(k)
 draw_set_blend_mode(bm_normal)
 draw_clear_alpha(c_black,1)
 draw_set_blend_mode(bm_subtract)
-with(Block) if(object_index=Block) draw_sprite_ext(sprite_index,0,x-view_xview,y-view_yview,image_xscale,image_yscale,0,0,1)
+with(Block) if(object_index=Block||object_index=BlockMini) draw_sprite_ext(sprite_index,0,x-view_xview,y-view_yview,image_xscale,image_yscale,0,0,1)
+with(Slope) draw_sprite_ext(sprite_index,0,x-view_xview,y-view_yview,image_xscale,image_yscale,0,0,1)
 draw_set_blend_mode(bm_normal)
 surface_reset_target()
 surface_set_target(v)

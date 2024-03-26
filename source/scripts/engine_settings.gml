@@ -7,13 +7,15 @@
 global.debug = true;
 // Set to noone to use no debug key, e.g. yoyoyo engine behavior.
 global.debug_key = vk_control;
-
-
+// dialogue settings
+dialogue_defaults()
 // Game properties
     // The title of your game, used in the window bar and the default title screen.
-    global.game_title = "Verve GM8.2 Engine";
+    global.game_title = "I wanna thank you Gafro!!";
     // The room you get loaded in on a new save file.
-    global.first_room = rSample;
+    global.first_room = r1;
+    // Hub room - The room you should go back when escaping a stage.
+    global.hub_room = noone;
     // Size of the game window.
     global.game_width = 800;
     global.game_height = 608;
@@ -30,9 +32,9 @@ global.debug_key = vk_control;
     // The location of all save data files.
     global.save_folder = "save\";
     // The password used to encrypt save files. "" means no encryption.
-    global.save_encryption_password = "verve";
-    //
-    global.optimize_solids = 2;
+    global.save_encryption_password = "yoisaki";
+    // Merges adjacent blocks to single large one. May cause problems with visible blocks. (0-4 is recommended)
+    global.optimize_solids = 0;
     // Makes saving preserve subpixels
     global.save_subpixel = false;
     // false = requires contact with save to use it
@@ -47,18 +49,15 @@ global.debug_key = vk_control;
     global.solids_crush = true;
     // Stops whatever keys the player was holding on certain transitions.
     // Useful in e.g. very cramped needle where running into a warp can easily result in death.
-    global.clear_input_on_warp = false;
+    global.clear_input_on_warp = true;
     global.clear_input_on_restart = false;
     // dedicated jump cancel and cactus key
-    global.biogom_jump = true;
+    global.biogom_jump = false;
 
 // Difficulties
-    global.difficulty_count = 4;
+    global.difficulty_count = 1;
     global.difficulty_names[0] = "Load Game";
     global.difficulty_names[1] = "Medium";
-    global.difficulty_names[2] = "Hard";
-    global.difficulty_names[3] = "Very Hard";
-    global.difficulty_names[4] = "Impossible";
 
 // Default camera
     // Whether the camera is active - you might want to disable it in e.g. a cutscene.

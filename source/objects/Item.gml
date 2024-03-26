@@ -5,6 +5,8 @@ action_id=603
 applies_to=self
 */
 index = 0;
+image_speed=0
+image_index=2
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

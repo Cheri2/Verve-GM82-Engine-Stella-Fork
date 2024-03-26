@@ -18,6 +18,7 @@ config_default("music_volume", 15);
 config_default("sound_volume", 25);
 config_default("fullscreen", false);
 config_default("smoothing", false);
+config_default("extendedmovement", false);
 
 // Apply the saved options.
 window_set_fullscreen(config_get("fullscreen"));

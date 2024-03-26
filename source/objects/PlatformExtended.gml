@@ -187,3 +187,14 @@ if (true) {
         }
     }
 } else if (sprite_index!=-1) draw_self()
+#define Trigger_Platform Swap
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+with(instance_create(x,y,PlatformWater2)) {
+    image_xscale=other.image_xscale
+    image_yscale=other.image_yscale
+}
+instance_destroy()

@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-respawn_delay = 100;
+respawn_delay = 50;
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -18,13 +18,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_yscale = global.grav * abs(image_yscale);
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if  image_alpha>0.5 if(place_meeting(x,y,Player) {
+if(place_meeting(x,y,Player)) {
+if image_alpha>0.5 {
     with(Player) {
         if(air_jumps=max_air_jumps) exit;
         air_jumps += 1;
@@ -34,6 +29,13 @@ if  image_alpha>0.5 if(place_meeting(x,y,Player) {
      image_alpha=0.2
     alarm[0] = respawn_delay;
 }
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+image_yscale = global.grav * abs(image_yscale);
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

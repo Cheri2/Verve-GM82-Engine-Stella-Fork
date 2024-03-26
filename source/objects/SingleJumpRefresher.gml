@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-respawn_delay = 100;
+respawn_delay = 250;
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -24,7 +24,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if  image_alpha>0.5 if(place_meeting(x,y,Player) {
+if image_alpha>0.5 {
     with(Player) {
         can_single_jump=1
     }

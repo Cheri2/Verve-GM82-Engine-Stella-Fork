@@ -58,9 +58,14 @@ if collected {
         friction = 0
         save_set(("golden_" + room_get_name(startingroom)), true)
     }
+    save_save_asap()
     if anim > 5 image_yscale -= 1/(animtime-5)
     if image_yscale <= 0 event_user(0)
     anim += 1
+}
+
+if save_get(str_cat("item", 0)) || save_get(str_cat("item", 1)) || save_get(str_cat("item", 2)) {
+    if(picked=false) instance_destroy()
 }
 #define Collision_Player
 /*"/*'/**//* YYD ACTION

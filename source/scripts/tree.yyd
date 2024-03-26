@@ -58,6 +58,7 @@
 			|option_music_volume
 			|option_sound_volume
 			|option_fullscreen
+			|option_extendedmovement
 			|option_smoothing
 			|option_keyboard
 +Events
@@ -115,3 +116,22 @@
 	|check_shift_pressed
 	|check_shift
 	|check_shift_released
+	|player_flip_half
+	|player_flip_momentum
+	|player_land_half
++dialogue
+	|dialogue_defaults
+	|draw_dialogue_box
+	|add_parameter
+	|add_message
+	|add_template
+	|add_template_parameter
+	|merge_maps
+	|define_templates
+	|draw_text_outline_alpha
+	|draw_text_outline_trans
+	|set_dialogue_flag
+	|unset_dialogue_flag
+	|check_dialogue_flag
+	|add_required_flag
+	|add_required_false_flag
