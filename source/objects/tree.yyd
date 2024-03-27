@@ -159,7 +159,8 @@
 +Visuals
 	|SurfaceBlock
 	|SurfaceHabluka
-	|object160
+	|skinnerRenex
+	|surfaceGeneric
 +Legacy
 	|object128
 	|object158
